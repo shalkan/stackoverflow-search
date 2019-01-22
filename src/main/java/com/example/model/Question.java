@@ -1,21 +1,18 @@
 package com.example.model;
 
+import java.sql.Timestamp;
 import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import org.threeten.bp.OffsetDateTime;
 import org.springframework.validation.annotation.Validated;
-
 import javax.validation.Valid;
 
 /**
  * Question
  */
 @Validated
-@javax.annotation.Generated(value = "com.example.codegen.v3.generators.java.SpringCodegen",
-                            date = "2019-01-21T14:54:46.412Z[GMT]")
-public class Question {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2019-01-22T13:22:50.616Z[GMT]")
+public class Question   {
   @JsonProperty("title")
   private String title = null;
 
@@ -23,10 +20,13 @@ public class Question {
   private String author = null;
 
   @JsonProperty("postDate")
-  private OffsetDateTime postDate = null;
+  private Timestamp postDate = null;
 
   @JsonProperty("isAnswered")
   private Boolean isAnswered = null;
+
+  @JsonProperty("originalLink")
+  private String originalLink = null;
 
   public Question title(String title) {
     this.title = title;
@@ -35,7 +35,6 @@ public class Question {
 
   /**
    * Get title
-   *
    * @return title
    **/
   @ApiModelProperty(example = "How to run simple java programm?", value = "")
@@ -55,7 +54,6 @@ public class Question {
 
   /**
    * Get author
-   *
    * @return author
    **/
   @ApiModelProperty(example = "newbie", value = "")
@@ -68,41 +66,62 @@ public class Question {
     this.author = author;
   }
 
-  public Question postDate(OffsetDateTime postDate) {
+  public Question postDate(Timestamp postDate) {
     this.postDate = postDate;
     return this;
   }
 
   /**
    * Get postDate
-   *
    * @return postDate
    **/
   @ApiModelProperty(value = "")
 
   @Valid
-  public OffsetDateTime getPostDate() {
+  public Timestamp getPostDate() {
     return postDate;
   }
 
-  public void setPostDate(OffsetDateTime postDate) {
+  public void setPostDate(Timestamp postDate) {
     this.postDate = postDate;
+  }
+
+  public Question isAnswered(Boolean isAnswered) {
+    this.isAnswered = isAnswered;
+    return this;
   }
 
   /**
    * Get isAnswered
-   *
    * @return isAnswered
    **/
   @ApiModelProperty(value = "")
 
-  @Valid
-  public Boolean getIsAnswered() {
+  public Boolean isIsAnswered() {
     return isAnswered;
   }
 
   public void setIsAnswered(Boolean isAnswered) {
     this.isAnswered = isAnswered;
+  }
+
+  public Question originalLink(String originalLink) {
+    this.originalLink = originalLink;
+    return this;
+  }
+
+  /**
+   * Get originalLink
+   * @return originalLink
+   **/
+  @ApiModelProperty(example = "https://stackoverflow.com/", value = "")
+
+  public String getOriginalLink() {
+    return originalLink;
+  }
+
+  public void setOriginalLink(String originalLink) {
+    this.originalLink = originalLink;
   }
 
 
@@ -118,12 +137,13 @@ public class Question {
     return Objects.equals(this.title, question.title) &&
            Objects.equals(this.author, question.author) &&
            Objects.equals(this.postDate, question.postDate) &&
-           Objects.equals(this.isAnswered, question.isAnswered);
+           Objects.equals(this.isAnswered, question.isAnswered) &&
+           Objects.equals(this.originalLink, question.originalLink);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, author, postDate, isAnswered);
+    return Objects.hash(title, author, postDate, isAnswered, originalLink);
   }
 
   @Override
@@ -135,13 +155,14 @@ public class Question {
     sb.append("    author: ").append(toIndentedString(author)).append("\n");
     sb.append("    postDate: ").append(toIndentedString(postDate)).append("\n");
     sb.append("    isAnswered: ").append(toIndentedString(isAnswered)).append("\n");
+    sb.append("    originalLink: ").append(toIndentedString(originalLink)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first
-   * line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {

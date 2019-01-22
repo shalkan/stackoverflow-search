@@ -1,7 +1,7 @@
 package com.example.api;
 
 import com.example.model.ItemList;
-import com.example.stackoverflow.client.StackoverflowHttpClient;
+import com.example.stackoverflow.service.QueryService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 public class SearchApiController implements SearchApi {
 
     @Autowired
-    private StackoverflowHttpClient stackoverflowHttpClient;
+    private QueryService queryService;
 
     private static final Logger log = LoggerFactory.getLogger(SearchApiController.class);
 
@@ -37,7 +37,7 @@ public class SearchApiController implements SearchApi {
 
     public ResponseEntity<ItemList> searchGet(@NotNull @ApiParam(value = "string for search query", required = true) @Valid @RequestParam(value = "searchString", required = true) String searchString, @NotNull @ApiParam(value = "number of page", required = true) @Valid @RequestParam(value = "pageNumber", required = true) Integer pageNumber, @NotNull @ApiParam(value = "size of page to return", required = true) @Valid @RequestParam(value = "pageSize", required = true) Integer pageSize) {
         String accept = request.getHeader("Accept");
-        return new ResponseEntity<ItemList>(stackoverflowHttpClient.doSearch(searchString, pageSize, pageNumber), HttpStatus.OK);
+        return new ResponseEntity<ItemList>(queryService.doSearch(searchString, pageNumber, pageSize), HttpStatus.OK);
     }
 
 }

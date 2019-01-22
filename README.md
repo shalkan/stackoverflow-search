@@ -16,3 +16,10 @@ You can view the api documentation in swagger-ui by pointing to
 http://localhost:8080/  
 
 Change default port value in application.properties
+
+Requirements: Java 1.8, Maven, npm
+
+steps to run:
+1. run 'npm install' from '/src/main/resources/js/' folder
+2. run 'webpack' from '/src/main/resources/js/' folder
+3. to run project execute 'mvn spring-boot:run' from project's root

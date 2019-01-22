@@ -11,6 +11,12 @@ public class HomeController {
     @RequestMapping(value = "/")
     public String index() {
         System.out.println("swagger-ui.html");
+        return "forward:index.html";
+    }
+
+    @RequestMapping(value = "/docs")
+    public String docs() {
+        System.out.println("swagger-ui.html");
         return "redirect:swagger-ui.html";
     }
 }

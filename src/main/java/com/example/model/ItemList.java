@@ -16,30 +16,30 @@ import javax.validation.Valid;
 @Validated
 @javax.annotation.Generated(value = "com.example.codegen.v3.generators.java.SpringCodegen", date = "2019-01-21T14:54:46.412Z[GMT]")
 public class ItemList   {
-  @JsonProperty("totalItems")
-  private Integer totalItems = null;
+  @JsonProperty("hasMore")
+  private Boolean hasMore = null;
 
   @JsonProperty("items")
   @Valid
   private List<Question> items = null;
 
-  public ItemList totalItems(Integer totalItems) {
-    this.totalItems = totalItems;
+  public ItemList totalItems(Boolean hasMore) {
+    this.hasMore = hasMore;
     return this;
   }
 
   /**
-   * Get totalItems
-   * @return totalItems
+   * Get hasMore
+   * @return hasMore
   **/
-  @ApiModelProperty(example = "758", value = "")
+  @ApiModelProperty(example = "true", value = "")
 
-  public Integer getTotalItems() {
-    return totalItems;
+  public Boolean getHasMore() {
+    return hasMore;
   }
 
-  public void setTotalItems(Integer totalItems) {
-    this.totalItems = totalItems;
+  public void setHasMore(Boolean hasMore) {
+    this.hasMore = hasMore;
   }
 
   public ItemList items(List<Question> items) {
@@ -79,13 +79,13 @@ public class ItemList   {
       return false;
     }
     ItemList itemList = (ItemList) o;
-    return Objects.equals(this.totalItems, itemList.totalItems) &&
-        Objects.equals(this.items, itemList.items);
+    return Objects.equals(this.hasMore, itemList.hasMore) &&
+           Objects.equals(this.items, itemList.items);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalItems, items);
+    return Objects.hash(hasMore, items);
   }
 
   @Override
@@ -93,7 +93,7 @@ public class ItemList   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ItemList {\n");
     
-    sb.append("    totalItems: ").append(toIndentedString(totalItems)).append("\n");
+    sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
     sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");
     return sb.toString();
