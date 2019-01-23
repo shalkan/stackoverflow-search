@@ -4,8 +4,6 @@ import axios from 'axios'
 
 export const doSearch = (context, payload) => {
   context.commit(mutations.SET_LOADING, true);
-  context.commit(mutations.SET_QUESTIONS);
-  context.commit(mutations.SET_HAS_MORE);
   let page = context.state.questions && context.state.questions.length > 0 ? context.state.page + 1 : 1;
   context.commit(mutations.SET_PAGE, page);
   axios.get("/search", {
@@ -21,7 +19,9 @@ export const doSearch = (context, payload) => {
     }
     context.commit(mutations.SET_LOADING, false);
   }).catch(err => {
-    context.commit(mutations.SET_LOADING, false);
+    console.error(err);
+    context.dispatch('clearSearch');
+    //TODO: show error message
   })
 }
 
