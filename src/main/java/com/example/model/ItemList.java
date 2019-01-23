@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 
@@ -32,7 +31,6 @@ public class ItemList   {
    * Get hasMore
    * @return hasMore
   **/
-  @ApiModelProperty(example = "true", value = "")
 
   public Boolean getHasMore() {
     return hasMore;
@@ -59,7 +57,6 @@ public class ItemList   {
    * Get items
    * @return items
   **/
-  @ApiModelProperty(value = "")
   @Valid
   public List<Question> getItems() {
     return items;

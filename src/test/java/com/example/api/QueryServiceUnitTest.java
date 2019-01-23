@@ -53,7 +53,7 @@ public class QueryServiceUnitTest {
     Question question = itemList.getItems().get(0);
     Assert.assertEquals(question.getTitle(), "ERROR [SoapUI] An error occurred [No suitable driver found for jdbc:oracle:thin:@//174.23.0.187:1111/qwe]");
     Assert.assertEquals(question.getAuthor(), "Happy");
-    Assert.assertEquals(question.getPostDate(), new Timestamp(1456827804L));
+    Assert.assertEquals(question.getPostDate(), new Timestamp(1456827804000L));
     Assert.assertTrue(question.isIsAnswered());
     Assert.assertEquals(question.getOriginalLink(), "https://stackoverflow.com/questions/35720329/error-soapui-an-error-occurred-no-suitable-driver-found-for-jdbcoraclethin");
   }

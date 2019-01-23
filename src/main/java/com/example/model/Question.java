@@ -3,7 +3,6 @@ package com.example.model;
 import java.sql.Timestamp;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 
@@ -37,7 +36,6 @@ public class Question   {
    * Get title
    * @return title
    **/
-  @ApiModelProperty(example = "How to run simple java programm?", value = "")
 
   public String getTitle() {
     return title;
@@ -56,7 +54,6 @@ public class Question   {
    * Get author
    * @return author
    **/
-  @ApiModelProperty(example = "newbie", value = "")
 
   public String getAuthor() {
     return author;
@@ -75,7 +72,6 @@ public class Question   {
    * Get postDate
    * @return postDate
    **/
-  @ApiModelProperty(value = "")
 
   @Valid
   public Timestamp getPostDate() {
@@ -95,7 +91,6 @@ public class Question   {
    * Get isAnswered
    * @return isAnswered
    **/
-  @ApiModelProperty(value = "")
 
   public Boolean isIsAnswered() {
     return isAnswered;
@@ -114,7 +109,6 @@ public class Question   {
    * Get originalLink
    * @return originalLink
    **/
-  @ApiModelProperty(example = "https://stackoverflow.com/", value = "")
 
   public String getOriginalLink() {
     return originalLink;
